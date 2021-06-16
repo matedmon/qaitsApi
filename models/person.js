@@ -6,7 +6,7 @@ const personSchema = new mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      unique: [true, "Identity is already in use!"],
+      // unique: [true, "Identity is already in use!"],
     },
     firstname: {
       type: String,

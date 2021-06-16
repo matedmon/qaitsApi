@@ -4,7 +4,9 @@ const { personValidation } = require("../utils/Validation");
 
 const errorMessage = (error, res) => {
   if (error.code === 11000) {
-    res.status(406).send("person with the same identity already exist!");
+    res
+      .status(406)
+      .send(`Person with the same identity already exist! (${error.message})`);
   } else if (error.message) {
     res.status(401).send(error.message);
   } else {
